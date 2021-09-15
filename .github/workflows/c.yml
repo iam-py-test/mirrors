@@ -1,9 +1,9 @@
-name: Update the combo list
+name: Update the mirrors
 on:
   push:
     branches: [ main ]
   schedule:
-    - cron: '16 20 * * *'
+    - cron: '16 20,2 * * *'
   workflow_dispatch:
 jobs:
   mkcombo:
@@ -14,7 +14,7 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
-    - name: Build
+    - name: Build mirrors
       run: |
         echo 0 > "status.txt" 
         pip3 install requests
@@ -23,7 +23,7 @@ jobs:
     - name: Commit & Push
       uses: actions-x/commit@v2
       with:
-          email: noreply@example.com
+          email: updatebot@iam-py-test.github.io
           name: Update bot
           branch: main
           message: Update the mirrors
