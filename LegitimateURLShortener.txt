@@ -547,7 +547,7 @@ $removeparam=ncid
 $removeparam=ecid
 $removeparam=adcid
 ! https://www.gamereactor.fi/?sid=39feac60637556f2d1f67482abf2b1ea
-$~xmlhttprequest,~script,removeparam=sid,domain=~mail.qq.com|~high.fi
+$~xmlhttprequest,~script,~websocket,removeparam=sid,domain=~mail.qq.com|~high.fi
 ! https://spreadprivacy.com/duckduckgrowing/?s=pr-hd
 ||spreadprivacy.com^$removeparam=s
 ! https://www.marvel.com/insider?Osocial=YT&CID=MarvelInsider
@@ -1087,6 +1087,12 @@ $removeparam=depth_1-utm_source
 ! https://www.frisktpust.no/collections/interior/products/umi-ergonomisk-kontorstol?cmp_id=14758715696&adg_id=128927650218&kwd=ergonomisk%20kontorstol&device=m
 $removeparam=cmp_id
 $removeparam=adg_id
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1424696
+||bing.com^$removeparam=pq
+||bing.com^$removeparam=refig
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-541044
+||bing.com^$removeparam=cvid
+@@||bing.com/AS/Suggestions?$removeparam=cvid
 
 ! ——— Can never be made generic ———
 ! (e.g. due to sparebank1.no, RARbg.to, Disney+ newsletter unsubscriptions)
