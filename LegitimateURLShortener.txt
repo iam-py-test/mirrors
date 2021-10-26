@@ -1,5 +1,5 @@
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 25October2021v1-Beta
+! Version: 26October2021v3-Beta
 ! Expires: 2 days
 ! Description: In a world dominated by bit.ly, ad.fly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -915,11 +915,11 @@ $removeparam=_branch_match_id
 ! ——— Specific rules ——— !
 !! ——— Can never be made generic ———
 ! (e.g. due to sparebank1.no, RARbg.to, Disney+ newsletter unsubscriptions)
-$removeparam=cid,domain=adshares.net|apple.com|www.microsoft.com|telenor.no|proshop.*|rightmove.co.uk|giphy.com|nbcnews.com|voxi.co.uk|lenovo.com|rei.com|adguard.com|gamestop.com|bitdefender.*|ae.com|anntaylor.com|blair.com|childrensplace.com|emirates.com|factoryoutletstore.com|haband.com|intuit.com|jared.com|jcpenney.com|kay.com|kohls.com|loft.com|nike.com|nyandcompany.com|overstock.com|radissonhotelsamericas.com|ray-ban.com|tommy.com|toms.com|tractorsupply.com|underarmour.com|vineyardvines.com|wine.com|wsj.com|zales.com
+$removeparam=cid,domain=adshares.net|apple.com|www.microsoft.com|telenor.no|proshop.*|rightmove.co.uk|giphy.com|nbcnews.com|voxi.co.uk|lenovo.com|rei.com|adguard.com|gamestop.com|bitdefender.*|ae.com|anntaylor.com|blair.com|childrensplace.com|emirates.com|factoryoutletstore.com|haband.com|intuit.com|jared.com|jcpenney.com|kay.com|kohls.com|loft.com|nike.com|nyandcompany.com|overstock.com|radissonhotelsamericas.com|ray-ban.com|tommy.com|toms.com|tractorsupply.com|underarmour.com|vineyardvines.com|wine.com|wsj.com|zales.com|xg4ken.com
 ! https://deal.no/apple-thunderbolt-to-gigabit-ethernet/cat-p/c/p4935744&ref=prisjakt (15/11/2020)
 ! https://www.amazon.com/s?k=disney+fairies&ref=nb_sb_noss_2 (27/11/2020)
 ! (https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-488495)
-$removeparam=ref,domain=amazon.*|deal.no|expo.io|udemy.com|reddit.com|brave.com|facebook.com|arvopaperi.fi|twitch.tv|mikrobitti.fi|tivi.fi|tekniikkatalous.fi|talouselama.fi|kauppalehti.fi|uusisuomi.fi|mediuutiset.fi|sketch.com|etsy.com|geeksforgeeks.org|hs.fi|bitwarden.com|is.fi|github.io|spiegel.de|kansanuutiset.fi|bestbuy.com|shopping.google.*|target.com|bing.com|motouutiset.fi|telsu.fi|idenati.com|blogit.fi|suomi24.fi|scandinavianphoto.fi|github.com|dell.com|audible.*|webhallen.no|imdb.com|abebooks.com|eset.com|kickstarter.com|oikotie.fi|sahkovertailu.fi|jasonsavard.com
+$removeparam=ref,domain=amazon.*|deal.no|expo.io|udemy.com|reddit.com|brave.com|facebook.com|arvopaperi.fi|twitch.tv|mikrobitti.fi|tivi.fi|tekniikkatalous.fi|talouselama.fi|kauppalehti.fi|uusisuomi.fi|mediuutiset.fi|sketch.com|etsy.com|geeksforgeeks.org|hs.fi|bitwarden.com|is.fi|github.io|spiegel.de|kansanuutiset.fi|bestbuy.com|shopping.google.*|target.com|bing.com|motouutiset.fi|telsu.fi|idenati.com|blogit.fi|suomi24.fi|scandinavianphoto.fi|github.com|dell.com|audible.*|webhallen.no|imdb.com|abebooks.com|eset.com|kickstarter.com|oikotie.fi|sahkovertailu.fi|jasonsavard.com|adobe.com|wormhole.app
 ! https://www.comixology.com/Scooby-Doo-1997-2010/comics-series/353?irgwc=1&tid=IR-affiliate-10451&clickid=VsxVfPSSvxyOWNfwUx0Mo38MUkiXwRwR0xWjW40 (01/03/2021)
 ! (e.g. mirrored.to, tunnistautuminen.suomi.fi)
 $removeparam=tid,domain=comixology.*|gap.com|gapcanada.ca|mintmobile.com|zulily.com
@@ -1480,7 +1480,7 @@ $removeparam=SID,domain=ae.com|anntaylor.com|applevacations.com|ashford.com|auto
 $removeparam=adref,domain=ancestry.*
 $removeparam=acid,domain=lenovo.com
 $removeparam=aid,domain=brownells.*|viator.com
-$removeparam=camp,domain=calvinklein.*|dickssportinggoods.com|dockers.com|dressbarn.com|lanebryant.com|levi.com|maurices.com|worldmarket.com
+$removeparam=camp,domain=calvinklein.*|dickssportinggoods.com|dockers.com|dressbarn.com|lanebryant.com|levi.com|maurices.com|worldmarket.com|xg4ken.com
 $removeparam=channelref,domain=asos.com
 $removeparam=clickref,domain=ancestry.*|chewy.com|expedia.com
 $removeparam=cmp,domain=agentprovocateur.com|brooksbrothers.com|cbc.ca|hulu.com
@@ -1745,6 +1745,26 @@ $removeparam=ds_url_v,domain=clickserve.dartsearch.net
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1533793
 ||wiggle.jp^$removeparam=vc_lpp
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1507045
+||go.skimresources.com^$removeparam=sref
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1493321
+||xg4ken.com^$removeparam=prof
+||xg4ken.com^$removeparam=affcode
+||xg4ken.com^$removeparam=kct
+||xg4ken.com^$removeparam=kchid
+||xg4ken.com^$removeparam=kdv
+||xg4ken.com^$removeparam=kpid
+||xg4ken.com^$removeparam=criteriaid
+||xg4ken.com^$removeparam=locphy
+||macys.com^$removeparam=trackingid
+||macys.com^$removeparam=/^m_/
+||macys.com^$removeparam=CAGPSPN
+
+! https://store.wsj.com/shop/apac/jp/jwsjss21/?inttrackingCode=aaqwimzi&icid=JJ_ON_JHP_ACQ_NA
+||wsj.com^$removeparam=inttrackingcode
+||wsj.com^$removeparam=icid
 
 ! ——— Rules for heavily covered international sites ——— !
 !! ——— PR-China ———
