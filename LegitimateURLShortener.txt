@@ -1,5 +1,5 @@
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 15November2021v1-Beta
+! Version: 16November2021v1-Beta
 ! Expires: 2 days
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -910,15 +910,11 @@ $removeparam=sub2
 $removeparam=sub3
 $removeparam=sub4
 $removeparam=sub5
-$removeparam=subId1
-$removeparam=subId2
-$removeparam=subId3
-$removeparam=subId4
-$removeparam=subid1
-$removeparam=subid2
-$removeparam=subid3
-$removeparam=subid4
-$removeparam=subid5
+$removeparam=/^subid1=/i
+$removeparam=/^subid2=/i
+$removeparam=/^subid3=/i
+$removeparam=/^subid4=/i
+$removeparam=/^subid5=/i
 $removeparam=tid1
 $removeparam=tid2
 $removeparam=tid3
@@ -1097,6 +1093,15 @@ $removeparam=byp455
 ! https://github.com/DandelionSprout/adfilt/pull/340
 ! https://www.uemeds.cn/info/infodetail/26511?detail_from=industry_hot (14/11/2021)
 $removeparam=detail_from
+
+! https://s.lazada.sg/s.ZIugg
+$removeparam=sub_aff_id
+$removeparam=sub_id1
+$removeparam=sub_id2
+$removeparam=sub_id3
+$removeparam=sub_id4
+$removeparam=sub_id5
+$removeparam=sub_id6
 
 ! ——— General blocking rules ——— !
 !! Scripts that solely exist to make URLs longer
@@ -2173,6 +2178,17 @@ $removeparam=referer,domain=bodykind.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1646225
 ||wsj.com^$removeparam=reflink
 
+! https://s.lazada.com.ph/s.3LwM6
+||lazada.$removeparam=dsource
+||lazada.$removeparam=laz_share_info
+||lazada.$removeparam=laz_token
+||lazada.$removeparam=exlaz
+
+! https://www.target.com/c/home-decor-deals/-/N-vxtra?lnm=1171879&marketing_id=EMAIL-104207-header&lnk=C_HomeDecorDeals_EMAIL-104207
+||target.com^$removeparam=lnm
+||target.com^$removeparam=lnk
+||target.com^$removeparam=marketing_id
+
 ! ——— Rules for heavily covered international sites ——— !
 !! ——— PR-China ———
 !! Special thanks to https://github.com/shenzhiming88 for helping with this section.
@@ -2263,6 +2279,7 @@ $removeparam=aff_trace_key
 ||baidu.com^$removeparam=pageFrom
 ||baidu.com^$removeparam=sids
 ||baidu.com^$removeparam=srcp
+! https://github.com/DandelionSprout/adfilt/pull/350
 ! https://baike.baidu.com/item/test/16103773?ivk_sa=1024630g (15/11/2021)
 ||baidu.com^$removeparam=ivk_sa
 
@@ -2292,6 +2309,20 @@ $removeparam=aff_trace_key
 ||bilibili.com^$removeparam=refer_from
 ! https://show.bilibili.com/platform/home.html?msource=pc_web
 ||bilibili.com^$removeparam=msource
+! https://github.com/DandelionSprout/adfilt/pull/355
+! https://github.com/the1812/Bilibili-Evolved/issues/974
+||bilibili.com/bangumi$removeparam=theme
+! https://github.com/DandelionSprout/adfilt/pull/354
+! https://github.com/the1812/Bilibili-Evolved/issues/1207
+||live.bilibili.com^$removeparam=visit_id
+! https://github.com/DandelionSprout/adfilt/pull/354
+! https://github.com/the1812/Bilibili-Evolved/issues/913
+||bilibili.com/audio/au*?$removeparam=type
+||bilibili.com/audio/mycollection?$removeparam=type
+! https://github.com/DandelionSprout/adfilt/pull/353
+! https://github.com/the1812/Bilibili-Evolved/issues/1574
+^p=1^$removeparam=p,domain=bilibili.com
+^t=0^$removeparam=t,domain=bilibili.com
 
 !!! ——— Sogou ———
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1421356
