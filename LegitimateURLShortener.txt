@@ -1,5 +1,5 @@
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 26November2021v1-Beta
+! Version: 26November2021v3-Beta
 ! Expires: 2 days
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -1200,6 +1200,9 @@ $removeparam=sid,domain=gamereactor.*|anrdoezrs.net|gopjn.com|jdoqocy.com|kqzyfj
 $removeparam=from,domain=sogou.com|baidu.com|jetbrains.com|bandcamp.com|apkpure.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1559915 and https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1559864
 $removeparam=keyword,domain=ebay.*|bindright.com|lendgo.com
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1707764
+$removeparam=id,domain=go.skimresources.com|karkkainen.com
+
 
 !! ——— Rules for heavily covered sites ———
 !!! ——— Amazon ———
@@ -1917,10 +1920,11 @@ $removeparam=rid,domain=giphy.com
 ||microsoft.com^$removeparam=destrt
 
 ! http://www.discshop.fi/?id=116426&ad=hintaseuranta&ad_src=hintaseuranta.fi&ad_content=Nintendo+Switch+Pro+Controller%2c+Nintendo+Switch+-peliohjain&ad_prodid=5179300
-$removeparam=ad,domain=discshop.fi|moosejaw.com
-$removeparam=ad_src,domain=discshop.fi
-$removeparam=ad_content,domain=discshop.fi
-$removeparam=ad_prodid,domain=discshop.fi
+! https://github.com/DandelionSprout/adfilt/commit/2781552717e908b5b33c2fd497151e11cc67abcf
+$removeparam=ad,domain=discshop.fi|moosejaw.com|multitronic.fi|adlibris.com|scandinavianphoto.fi|e-ville.com|data-systems.fi|24hshop.fi
+$removeparam=ad_src,domain=discshop.fi|adlibris.com|scandinavianphoto.fi|e-ville.com|data-systems.fi|24hshop.fi
+$removeparam=ad_content,domain=discshop.fi|adlibris.com|scandinavianphoto.fi|e-ville.com|data-systems.fi|24hshop.fi
+$removeparam=ad_prodid,domain=discshop.fi|adlibris.com|scandinavianphoto.fi|e-ville.com|data-systems.fi|24hshop.fi
 
 ! https://www.netflix.com/watch/80057171?trackId=14170056&tctx=2%2C0%2Cad3cd321-a42b-461e-81d3-b18c51559559-25047246%2Ce7fede3c-e54d-4941-9849-8fb5d51dbada_37683809X10XX1622546150880%2Ce7fede3c-e54d-4941-9849-8fb5d51dbada_ROOT%2C
 ||netflix.com^$removeparam=trackId
@@ -2273,7 +2277,6 @@ $removeparam=lId,domain=apple.com|youtube.com
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1490207
 ! i.e. https://go.skimresources.com/?id=160612X1627478&xcust=adm2_841947&xs=1&url=https%3A%2F%2Fwalmart.com%2Fip%2F204105463
-||go.skimresources.com^$removeparam=id
 ||go.skimresources.com^$removeparam=xcust
 ||go.skimresources.com^$removeparam=xs
 
