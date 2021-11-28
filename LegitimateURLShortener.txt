@@ -1,5 +1,5 @@
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 27November2021v1-Beta
+! Version: 28November2021v3-Beta
 ! Expires: 2 days
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -1179,7 +1179,7 @@ $removeparam=cid,domain=adshares.net|apple.com|www.microsoft.com|telenor.no|pros
 ! https://deal.no/apple-thunderbolt-to-gigabit-ethernet/cat-p/c/p4935744&ref=prisjakt (15/11/2020)
 ! https://www.amazon.com/s?k=disney+fairies&ref=nb_sb_noss_2 (27/11/2020)
 ! (https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-488495)
-$removeparam=ref,domain=amazon.*|deal.no|expo.io|udemy.com|reddit.com|brave.com|facebook.com|arvopaperi.fi|twitch.tv|mikrobitti.fi|tivi.fi|tekniikkatalous.fi|talouselama.fi|kauppalehti.fi|uusisuomi.fi|mediuutiset.fi|sketch.com|etsy.com|geeksforgeeks.org|hs.fi|bitwarden.com|is.fi|github.io|spiegel.de|kansanuutiset.fi|bestbuy.com|shopping.google.*|target.com|bing.com|motouutiset.fi|telsu.fi|idenati.com|blogit.fi|suomi24.fi|scandinavianphoto.fi|github.com|dell.com|audible.*|webhallen.no|imdb.com|abebooks.com|eset.com|kickstarter.com|oikotie.fi|sahkovertailu.fi|jasonsavard.com|adobe.com|wormhole.app|coop.no|buzzfeed.com|megapornfreehd.com|baidu.com|semrush.com|protonvpn.com|altcustoms.com
+$removeparam=ref,domain=amazon.*|deal.no|expo.io|udemy.com|reddit.com|brave.com|facebook.com|arvopaperi.fi|twitch.tv|mikrobitti.fi|tivi.fi|tekniikkatalous.fi|talouselama.fi|kauppalehti.fi|uusisuomi.fi|mediuutiset.fi|sketch.com|etsy.com|geeksforgeeks.org|hs.fi|bitwarden.com|is.fi|github.io|spiegel.de|kansanuutiset.fi|bestbuy.com|shopping.google.*|target.com|bing.com|motouutiset.fi|telsu.fi|idenati.com|blogit.fi|suomi24.fi|scandinavianphoto.fi|github.com|dell.com|audible.*|webhallen.no|imdb.com|abebooks.com|eset.com|kickstarter.com|oikotie.fi|sahkovertailu.fi|jasonsavard.com|adobe.com|wormhole.app|coop.no|buzzfeed.com|megapornfreehd.com|baidu.com|semrush.com|protonvpn.com|altcustoms.com|hintaseuranta.fi
 ! https://www.comixology.com/Scooby-Doo-1997-2010/comics-series/353?irgwc=1&tid=IR-affiliate-10451&clickid=VsxVfPSSvxyOWNfwUx0Mo38MUkiXwRwR0xWjW40 (01/03/2021)
 ! (e.g. mirrored.to, tunnistautuminen.suomi.fi)
 $removeparam=tid,domain=comixology.*|gap.com|gapcanada.ca|mintmobile.com|zulily.com|clickbank.net
@@ -1241,7 +1241,7 @@ $removeparam=geniuslink
 ||amazon.$removeparam=hsa_cr_id
 ||amazon.$removeparam=/^pd_rd_/
 ! https://www.amazon.com/Razer-Core-Thunderbolt-External-Enclosure/dp/B07CQG2K5K/?tag=makeusw-20&linkCode=ogi&th=1&psc=1 (15/11/2020)
-$~xmlhttprequest,removeparam=psc
+!!!$~xmlhttprequest,removeparam=psc (Breaks cloth size selection)
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-944078
 ||amazon.$removeparam=twitchToken
 ||amazon.$removeparam=sigts
@@ -1706,6 +1706,8 @@ $removeparam=nettype
 ||mp.weixin.qq.com^$removeparam=subscene
 ! https://github.com/DandelionSprout/adfilt/pull/341
 $removeparam=report_recomm_player
+! https://github.com/DandelionSprout/adfilt/pull/386
+||mail.qq.com/cgi-bin/frame_html?$removeparam=r
 
 !! ——— Miscellaneous ———
 ! No particular examples
@@ -1979,7 +1981,7 @@ $removeparam=tracker,domain=dustdeal.nl|batteryupgrade.*
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1031533
 ||simplelogin.io^$removeparam=slref
-$removeparam=r,domain=ledger.io|mail.qq.com
+||ledger.io^$removeparam=r
 ||roboform.com^$removeparam=rec
 
 ! https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTQ_thTIPr-4kGYMHEyfPeD9YN_0fwvx4-fQ&usqp=CAU
@@ -2224,7 +2226,7 @@ $removeparam=site_refer,domain=saksfifthavenue.com|saksoff5th.com
 ||sn.dk^$removeparam=rss
 
 ! https://www.masku.com/tuotteet/393766-smart-tyopoyta/?nosto=productpage-nosto-2&conf%5B1153%5D=10427&conf%5B2651%5D=10771
-||masku.com^$removeparam=nosto
+$removeparam=nosto,domain=masku.com|staypro.fi
 
 ! https://scontent.cdninstagram.com/v/t50.2886-16/228280186_4462339507137399_6165083647713647040_n.mp4?efg=eyJ2ZW5jb2RlX3RhZyI6InZ0c192b2RfdXJsZ2VuLjcyMC5zdG9yeS5kZWZhdWx0In0&_nc_ht=scontent-iev1-1.cdninstagram.com&_nc_ohc=nL_7kCFHgrcAX-HT6F1&edm=AOVtZ6oBAAAA&vs=17895914579221456_1489520608&_nc_vs=HBksFQAYJEdIcEhtdzEzcXpCaGVkb1BBTUNaaXVEcHhvNVZidXFIQUFBQRUAAsgBABUAGCRHTVdiZFE2Z2ZIa3dVWFVBQUtNZXdSNFhTQ2NSYnBrd0FBQUYVAgLIAQAoABgAGwGIB3VzZV9vaWwBMRUAACbCkMnRj5zWPxUCKAJDMywXQCREGJN0vGoYEmRhc2hfYmFzZWxpbmVfM192MREAdegHAA%3D%3D&ccb=7-4&oe=614B0BE1&oh=22849edcbcdb1949e3f0cbde56ddd89b&_nc_vts_prog=1&dl=1
 ||cdninstagram.com^$removeparam=ccb
@@ -2574,6 +2576,15 @@ $removeparam=f_id,domain=admitad.com
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1710177
 $removeparam=mv_pc,domain=fragrancenet.com
+
+! https://www.walmart.com/ip/My-Little-Pony-GWP-Kick-Scooter/298640635?selectedSellerId=0&wl13=2708&&wl0&wl1=g&wl2=m&wl3=526807706123&wl4=pla-1303781078790&wl5=9031484&wl6&wl7&wl8&wl9=pla&wl10=8175035&wl11=local&wl12=298640635
+||walmart.$removeparam=/^wl[0-9]=/
+||walmart.$removeparam=wl10
+||walmart.$removeparam=wl11
+||walmart.$removeparam=wl12
+!!!||walmart.$removeparam=wl13 (Decides pickup location)
+! https://www.walmart.com/ip/Old-El-Paso-Stand-N-Stuff-Bold-Nacho-Cheese-Flavored-Taco-Dinner-Kit-9-5-oz/38260506?athcpid=38260506&athpgid=AthenaItempage&athcgid=null&athznid=siext&athieid=v0&athstid=CS056&athguid=egnNrMG_5XOxTB0tFsuPZlPSj01v5EdpAUIb&athancid=null&athena=true
+||walmart.$removeparam=/^ath/
 
 !#if !env_mobile
 ! ——— Mobile ——— !
