@@ -1,5 +1,5 @@
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 29December2021v1-Beta
+! Version: 29December2021v6-Beta
 ! Expires: 1 day
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -499,7 +499,7 @@ $removeparam=affname
 $removeparam=MID
 
 ! https://www.greatrun.org/train-and-prepare/training-plans/?eid=AJ935930567982484926441023zzzzz64bccfd443fc61ff2c06e3cf8c7b889a2061064e5d5db55e171241354f241bed00
-$~xmlhttprequest,removeparam=eid,domain=~howlongtobeat.com|~activationspot.com|~vmware.com
+$~xmlhttprequest,removeparam=eid,denyallow=embed.tapkal.fi,domain=~howlongtobeat.com|~activationspot.com|~vmware.com
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1031533
 $removeparam=nr_email_referer
@@ -2041,9 +2041,6 @@ $removeparam=ad_src,domain=discshop.fi|adlibris.com|scandinavianphoto.fi|e-ville
 $removeparam=ad_content,domain=discshop.fi|adlibris.com|scandinavianphoto.fi|e-ville.com|data-systems.fi|24hshop.fi|swamp.fi
 $removeparam=ad_prodid,domain=discshop.fi|adlibris.com|scandinavianphoto.fi|e-ville.com|data-systems.fi|24hshop.fi|swamp.fi
 
-! https://www.netflix.com/watch/80057171?trackId=14170056&tctx=2%2C0%2Cad3cd321-a42b-461e-81d3-b18c51559559-25047246%2Ce7fede3c-e54d-4941-9849-8fb5d51dbada_37683809X10XX1622546150880%2Ce7fede3c-e54d-4941-9849-8fb5d51dbada_ROOT%2C
-||netflix.com^$removeparam=trackId
-
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-810773
 ||rei.com^$removeparam=target_id
 ||squarespace.com^$removeparam=subchannel
@@ -2830,6 +2827,10 @@ $removeparam=plink,domain=audible.*
 ! https://www.netflix.com/watch/81110875?trackId=254794450&tctx=2%2C1%2C96c1d619-68cd-4cad-ba6c-7e473d76dd30-24305116%2C%2Cunknown%2C%2C%2C (29/12/2021)
 ||netflix.com^$removeparam=trackId
 ||netflix.com^$removeparam=tctx
+||netflix.com^$removeparam=trackIdJaw
+||netflix.com^$removeparam=trackIdTrailer
+||netflix.com^$removeparam=trackIdEpisode
+||netflix.com^$removeparam=dpRightClick
 
 !#if !env_mobile
 ! ——— Mobile ——— !
@@ -2871,7 +2872,9 @@ $removeparam=height,domain=i-viaplay.com.akamaized.net|media.discordapp.net|tvno
 ! Email verification for 'MyWOT' - https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1683830
 @@||mywot.com/user/*/confirmNewEmail$removeparam=/^utm_/i
 
+!#if adguard
 !#if adguard_ext_firefox
 ! https://github.com/DandelionSprout/adfilt/issues/376
 @@|wss://$removeparam
+!#endif
 !#endif
