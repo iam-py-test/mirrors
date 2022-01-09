@@ -1,5 +1,5 @@
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 07January2022v2-Beta
+! Version: 09January2022v3-Beta
 ! Expires: 1 day
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -378,7 +378,7 @@ $removeparam=wdorigin
 $removeparam=/^aff_id[0-9]?=/i,domain=~affiliate.salestring.com
 
 ! https://tenshoku.nikkei.co.jp/lp/15002/?n_cid=TPRN0002&waad=Ujim9yQ8&adid=NK_L2_T_shortlink_Sun_diagnosis&utm_source=NKdenshiban&utm_medium=content-text&utm_content=text&utm_campaign=shortlink_Sun_diagnosis
-$~xmlhttprequest,removeparam=/^adid=/i,domain=~finn.no
+$~xmlhttprequest,removeparam=/^adid=/i,domain=~finn.no|~willhaben.at
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-773756
 $removeparam=twitchReferral
@@ -2924,7 +2924,8 @@ $removeparam=searchClick,domain=shopbop.com
 $removeparam=searchResultClicked,domain=shopbop.com
 $removeparam=breadcrumb,domain=shopbop.com
 
-! ——— NSFW websites ———
+! https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Faccounts.google.com%2FManageAccount%3Fnc%3D1&dsh=S-1476216186%3A1641712437682727&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp (09/01/2022)
+||accounts.google.com^$removeparam=dsh
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1914216
 $removeparam=r,domain=mrgay.com
