@@ -1,5 +1,5 @@
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 02April2022v1
+! Version: 03April2022v2
 ! Expires: 1 day
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -1337,6 +1337,9 @@ $removeparam=amp_gsa
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2447274
 $removeparam=vgo_ee
 
+! https://www.readpeak.com/best-practice/4-4-server-to-server-tracking
+$removeparam=rpcid
+
 ! ——— General blocking rules ——— !
 !! Scripts that solely exist to make URLs longer.
 ! https://github.com/DandelionSprout/adfilt/pull/320
@@ -1389,7 +1392,7 @@ $removeparam=refRID
 @@||amazon.*/gp/slredirect/picassoRedirect.html^$removeparam
 ! https://www.amazon.com/Disney-Fairies-Lessons-Chapter-ebook-ebook/dp/B007R6UWG2/ref=sr_1_16?dchild=1&keywords=disney+fairies&qid=1606488113&sr=8-16 (27/11/2020)
 $removeparam=dchild
-$removeparam=qid,domain=~ebay.*|~zhidao.baidu.com
+$~xmlhttprequest,removeparam=qid,domain=~ebay.*|~zhidao.baidu.com
 ||amazon.$removeparam=sr
 ! https://www.amazon.co.uk/dp/B08K443FBQ/ref=asc_df_B08K443FBQ1606003200000/?creative=22374&creativeASIN=B08K443FBQ (28/11/2020)
 $removeparam=creative
@@ -3135,9 +3138,6 @@ $removeparam=pr_prod_strat
 $removeparam=pr_rec_pid
 $removeparam=pr_ref_pid
 $removeparam=pr_seq
-
-! https://lifamasks.shop/products/lifa-air-kuvioitu-kirurginen-suu-nenasuojus-type-iir?rpcid=5ccad8f5-b75b-4132-82b7-c6c1ac333dddI363836303a3435373a3336363135
-$removeparam=rpcid,domain=lifamasks.shop
 
 ! https://www.bleepingcomputer.com/news/security/mcafee-agent-bug-lets-hackers-run-code-with-windows-system-privileges/?traffic_source=Connatix
 ||bleepingcomputer.com^$removeparam=traffic_source
