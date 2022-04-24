@@ -1,5 +1,5 @@
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 09April2022v1
+! Version: 23April2022v1
 ! Expires: 1 day
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -73,7 +73,7 @@ $removeparam=tt_medium
 $removeparam=scid
 
 ! https://salming.com/sv-se/produkter/p/1099805-0416/salming-oval-fusion?trackID=79064280 (27/11/2020)
-$removeparam=trackID
+$document,removeparam=trackID
 
 ! https://productkeys.dk/produkt/pokemon-lets-go-pikachu/?dTribesID=9OIiIkbuCBtHQnvUeuU6ZD05WpuicLKP%7Cadtribes%7C11543 (27/11/2020)
 $removeparam=dTribesID
@@ -146,10 +146,6 @@ $removeparam=widget-ref
 
 ! https://www.reuters.com/article/us-apple-cydia-lawsuit-idUSKBN28K310?taid=5fd28550d1225d000133bf89 (10/12/2020)
 $removeparam=taid
-
-! https://scontent.fosl3-2.fna.fbcdn.net/v/t1.0-9/107461725_178044047037717_1670568338259435866_o.jpg?_nc_cat=106&ccb=2&_nc_sid=dd9801&_nc_ohc=rwZyfBjoc_gAX-qiWab&_nc_ht=scontent.fosl3-2.fna&oh=250a678cd3d6a37531e9ff24466b2f56&oe=5FF90248 (11/12/2020)
-$removeparam=_nc_cat
-$removeparam=_nc_sid
 
 ! https://www.tipsbladet.dk/nyhed/superliga/cv-afviser-traenerskifte-jeg-har-ikke-talt-med-kristian?eblink=artikel (14/12/2020)
 $removeparam=eblink
@@ -508,7 +504,7 @@ $removeparam=srnd
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1061792
 $removeparam=as_src
-$removeparam=coid
+$removeparam=coid,domain=~radioreference.com
 $removeparam=edsacid
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1142244
@@ -584,7 +580,7 @@ $removeparam=bcpid
 $removeparam=bctid
 
 ! https://www.chegg.com/textbooks/psychology-10th-edition-9781305498204-1305498208?trackid=680b4fc9118c&strackid=a2b7fd66a78c
-$removeparam=trackid
+$document,removeparam=trackid
 $removeparam=strackid
 
 ! http://www.3balls.com/?usource=lc&lctid=1184062&lcid=1630749503_3_0991310
@@ -1364,7 +1360,7 @@ $removeparam=src,domain=3cx.com|adafruit.com|ashford.com|bluejeans.com|bose.*|br
 ! No particular example
 ! https://github.com/DandelionSprout/adfilt/pull/474
 ! https://user.qzone.qq.com/1250252459?source=aiostar (01/02/2022)
-$document,removeparam=source,denyallow=googlevideo.com,domain=1sol.io|ashford.com|asos.com|att.com|awd-it.*|bankofamerica.com|barenecessities.com|bedbathandbeyond.com|betterprogramming.pub|blavity.com|boscovs.com|boxboat.com|brownells.*|burkesoutlet.com|bybit.com|choicehotels.com|chollometro.com|coinpanel.com|contabo.com|cyberghostvpn.com|despegar.*|directv.com|discord.*|docs.google.com|docsend.com|drinkhint.com|edx.org|educba.com|eonline.com|eventbrite.*|fiverr.com|fool.com|forms.gle|gethotspotshield.com|gleam.io|goodcrypto.app|googleusercontent.com|greenhouse.io|greenvoice.fr|hammacher.com|hanes.com|hobbyhall.fi|hotspotshield.com|hottopic.com|housing.com|hp.com|instagram.com|itnext.io|jacquielawson.com|just-eat.co.uk|kasta.io|medium.com|nautica.com|onehanesplace.com|outnorth.fi|petsupplies.com|phonesoap.com|riteaid.com|runnode.com|search.brave.com|sonos.com|spiceworks.com|squarespace.com|subscribe.gq.com|t.me|thedailybeast.com|tiktok.com|tokopedia.com|tommybahama.com|torrid.com|tous.com|tradingview.com|twitter.com|user.qzone.qq.com|vimeo.com|webhint.io|wilsonsleather.com|wired.com|ylighting.com|youtube.com|yubo.live|britishcornershop.co.uk|microsoftedgewelcome.microsoft.com
+$document,removeparam=source,denyallow=googlevideo.com,domain=1sol.io|ashford.com|asos.com|att.com|awd-it.*|bankofamerica.com|barenecessities.com|bedbathandbeyond.com|betterprogramming.pub|blavity.com|boscovs.com|boxboat.com|brownells.*|britishcornershop.co.uk|burkesoutlet.com|bybit.com|choicehotels.com|chollometro.com|coinpanel.com|contabo.com|cyberghostvpn.com|despegar.*|directv.com|discord.*|docs.google.com|docsend.com|drinkhint.com|edx.org|educba.com|eonline.com|eventbrite.*|fiverr.com|fool.com|forms.gle|gethotspotshield.com|gleam.io|goodcrypto.app|googleusercontent.com|greenhouse.io|greenvoice.fr|hammacher.com|hanes.com|hobbyhall.fi|hotspotshield.com|hottopic.com|housing.com|hp.com|instagram.com|itnext.io|jacquielawson.com|just-eat.co.uk|kasta.io|medium.com|microsoftedgewelcome.microsoft.com|nautica.com|nortonsafe.search.ask.com|onehanesplace.com|outnorth.fi|petsupplies.com|phonesoap.com|riteaid.com|runnode.com|search.brave.com|sonos.com|spiceworks.com|squarespace.com|subscribe.gq.com|t.me|thedailybeast.com|tiktok.com|tokopedia.com|tommybahama.com|torrid.com|tous.com|tradingview.com|twitter.com|user.qzone.qq.com|vimeo.com|webhint.io|wilsonsleather.com|wired.com|ylighting.com|youtube.com|yubo.live
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-525100
 ! https://github.com/DandelionSprout/adfilt/pull/277
 $removeparam=mod,domain=barrons.com|dowjones.com|fnlondon.com|mansionglobal.com|marketwatch.com|penews.com|wsj.com
@@ -1407,7 +1403,7 @@ $removeparam=trk,domain=splashthat.com|aws.amazon.com|aws|xkcd.com
 ||amazon.$removeparam=ascsubtag
 ||amazon.$removeparam=crid
 ||amazon.$removeparam=/^cv_ct_/
-||amazon.$removeparam=ie
+!!! ||amazon.$removeparam=ie - https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2611566
 ||amazon.$removeparam=rnid
 ! ||amazon.$removeparam=s
 ||amazon.$removeparam=sprefix
@@ -1607,6 +1603,11 @@ $removeparam=m_entstream_source
 ! https://github.com/ClearURLs/Rules/issues/23
 $removeparam=referral_code,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
 $removeparam=referral_story_type,domain=facebook.*|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com
+! https://scontent.fosl3-2.fna.fbcdn.net/v/t1.0-9/107461725_178044047037717_1670568338259435866_o.jpg?_nc_cat=106&ccb=2&_nc_sid=dd9801&_nc_ohc=rwZyfBjoc_gAX-qiWab&_nc_ht=scontent.fosl3-2.fna&oh=250a678cd3d6a37531e9ff24466b2f56&oe=5FF90248 (11/12/2020)
+$removeparam=_nc_cat
+$removeparam=_nc_sid
+! https://instagram.fosl3-2.fna.fbcdn.net/v/t51.2885-15/267121608_448870736951308_2963883134408890666_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_ht=instagram.fosl3-2.fna.fbcdn.net&_nc_ohc=iE409d8ytCsAX8xESXq&edm=ABZsPhsBAAAA&oh=00_AT9JTbbYP_FBvW8fijShd6P5E2_vhuETlGyFHwXa6Lz3cg&oe=6269A904 (23/04/2022)
+||instagram.*.fna.fbcdn.net^$removeparam=ccb
 
 !!! ——— Google Search ———
 ! https://books.googleusercontent.com/books/content/reader?id=ZqK8A800eu4C&hl=no&pg=epub_10-jpg&img=1&zoom=6&cds=2&sig=ACfU3U3Si7lRb8j-vl0ZHTxcQUS7QcwWfg&w=800&h=1046&cp_ksver=2%3DVrverkkqAh0.&source=ge-web-app (The "$sig" value is specific to individual Google Play Books accounts; 22/11/2020)
@@ -3292,6 +3293,51 @@ $removeparam=zsource,domain=slashgear.com
 ||cardif.fr^$removeparam=at_medium
 ||cardif.fr^$removeparam=at_custom_var9
 ||cardif.fr^$removeparam=at_custom_var10
+
+! https://www.nytimes.com/2022/04/12/opinion/inflation-consumer-prices.html?searchResultPosition=15
+$removeparam=searchResultPosition,domain=nytimes.com
+
+! https://www.mongodb.com/try/download/community?tck=docs_server
+$removeparam=tck,domain=mongodb.com
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2553677
+$removeparam=locale,domain=udemy.com
+$removeparam=response_type,domain=udemy.com
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2561976
+||zoho.com^$removeparam=zsrc
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2580104
+||lookmovie211.xyz^$removeparam=mid
+||lookmovie211.xyz^$removeparam=sid
+||lookmovie211.xyz^$removeparam=sec
+||lookmovie211.xyz^$removeparam=t
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2581603
+||nortonsafe.search.ask.com^$removeparam=installsource
+||nortonsafe.search.ask.com^$removeparam=os
+||nortonsafe.search.ask.com^$removeparam=ssdcat
+||nortonsafe.search.ask.com^$removeparam=templatecat
+||nortonsafe.search.ask.com^$removeparam=o
+||nortonsafe.search.ask.com^$removeparam=vendorsrc
+||nortonsafe.search.ask.com^$removeparam=olpchannel
+||nortonsafe.search.ask.com^$removeparam=chn
+||nortonsafe.search.ask.com^$removeparam=tpr
+||nortonsafe.search.ask.com^$removeparam=p2
+||nortonsafe.search.ask.com^$removeparam=qsrc
+||nortonsafe.search.ask.com^$removeparam=cmpgn
+||nortonsafe.search.ask.com^$removeparam=qo
+||nortonsafe.search.ask.com^$removeparam=doi
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2586765
+||support.github.com^$removeparm=tag
+
+! https://www.oerproject.com/Account/Teacher-Signup?RegistrationSource={8F3F8D17-0E32-4C9B-9E33-971B12CC0B97}
+||oerproject.com^$removeparam=RegistrationSource
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2597385
+$document,removeparam=_clde
+$document,removeparam=_cldee
 
 !#if !env_mobile
 ! ——— Mobile ——— !
