@@ -1,5 +1,5 @@
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 08April2023v1
+! Version: 09April2023v2
 ! Expires: 1 day
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -227,7 +227,7 @@ $removeparam=curator_clanid,domain=~store.steampowered.*
 $removeparam=snr,domain=steampowered.com|steamcommunity.com|steamgames.com
 
 ! https://www.trouw.nl/nieuws/het-draagvlak-in-crisistijd-doet-premier-rutte-bijna-zweven-maar-hij-kan-ook-hard-vallen~bf367a86/?referrer=https%3A%2F%2Fwww.theguardian.com%2Fworld%2Fcommentisfree%2F2021%2Fmar%2F04%2Fcovid-derailed-great-hope-dutch-far-right-thierry-baudet (05/03/2021)
-$removeparam=referrer,domain=~f4map.com|~deviantart.com|~github.com|~discover.*|~vimeo.*
+$~subdocument,removeparam=referrer,domain=~f4map.com|~deviantart.com|~github.com|~discover.*|~vimeo.*
 $removeparam=ext_source
 
 ! https://graphicriver.net/item/invoice-estimation-brief/20668760?iradid=275988&irpid=1288974&iradtype=ONLINE_TRACKING_LINK&irmptype=mediapartner&mp_value1 (17/03/2021)
@@ -1661,7 +1661,8 @@ $removeparam=sk,domain=bing.com|aliexpress.*
 !!! @@||bing.com/AS/Suggestions?$removeparam=cvid
 ! https://www.bing.com/search?q=brew+milk+video+heathly+or+brainwash&shtp=GetUrl&shid=52ffd333-de86-43eb-8e42-3c4b8d86b6a3&shtk=RHJpbmsgT25lIEdsYXNzIG9mIE1pbGsgYSBEYXkuIEJldHRlciBCb25lcyBvciBCcmFpbndhc2hpbmc%2F&shdk=VGhpcyB2aWRlbyBpcyBzcG9uc29yZWQgYnkgRGFzaGxhbmUuIFRyeSBpdCBmcmVlIGZvciAzMCBkYXlzIGF0IGh0dHBzOi8vd3d3LmRhc2hsYW5lLmNvbS9icmV3IElmIHlvdSBsaWtlIGl0LCB1c2UgdGhlIGNvZGUg4oCYYnJld%2BKAmSBmb3IgMTAlIG9mZiBhdCBjaGVja291dCBJcyBtaWxrIGdvb2Qgb3IgYmFkIGZvciB5b3U%2FIElzIGl0IHJlYWxseSBoZWFsdGh5IGZvciB5b3VyIGJvbmVzPyBXaHkgYXJlIHJlc2VhcmNoZXJzIGFuZCBzY2llbnRpc3RzIHNwZWFraW5nIGFnYWluc3QgaXQ%2FIElzIHRoZSBmb29kIGluZHVzdHJ5IGhpZGluZyBzb21ldGhpbmcgZnJvbSB1cz8gTGV0J3MgZmluZCBvdXQgLi4u&shhk=a8MjbVhOQyCok8qs42amxA6%2B8sUgPQh4DtB4PgJh0gI%3D&shth=OVP.XR1Cz2a0aI5ebTNFbFySUAIIEk
 ! (https://github.com/DandelionSprout/adfilt/issues/796)
-||bing.com^$removeparam=/^sh[a-np-z0-9]/
+! (Removing shareId breaks BingBot sharing, and it's tricky to narrow the entry to standard searches only; see https://github.com/DandelionSprout/adfilt/issues/826)
+||bing.com^$removeparam=/^sh[b-np-z0-9]/
 ! https://github.com/DandelionSprout/adfilt/pull/504
 ! https://www.bing.com/search?q=Test&cc=CN&setlang=zh-CN&nclid=2F21E165874042D66713EAE9392AD01E&ts=1644819994709&wsso=Moderate (14/02/2022)
 ||bing.com^$removeparam=nclid
