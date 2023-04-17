@@ -1,5 +1,5 @@
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 16April2023v2
+! Version: 17April2023v3
 ! Expires: 1 day
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -429,8 +429,9 @@ $removeparam=AFID,domain=~chggtrx.com|~state.gov
 ! (https://github.com/uBlockOrigin/uAssets/issues/14997)
 $~css,~script,removeparam=campaignid
 
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-810773
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1412160
-$removeparam=loc,document,domain=~geizhals.*|~ebay.*|~myanimelist.net|~microsoft.com|~liveperson.net|~saltenposten.no
+$removeparam=loc,document,domain=bestbuy.*|shopping.google.com
 $removeparam=acampID
 $removeparam=pj_creativeid
 $removeparam=pj_publisherid
@@ -452,7 +453,7 @@ $removeparam=/^amp$/,domain=~eurasiantimes.com
 ! https://www.tokopedia.com/legoclassic/my-little-pony-a-new-generation-crystal-princess-petals-figure-set?src=topads&xClientId=amp-IWyM3dL4bS8QlacnZO4hyg&cid=amp-IWyM3dL4bS8QlacnZO4hyg&amp=true
 $removeparam=/^amp=true$/
 ! https://www.newsweek.com/housing-market-falls-sales-new-homes-down-1727968?amp=1
-$removeparam=/^amp=1$/,domain=~listafriikki.com
+$removeparam=/^amp=1$/,document,domain=~listafriikki.com|~londonjazznews.com
 
 ! https://inews.co.uk/opinion/matt-hancock-health-bill-huge-row-no10-boris-johnson-1067703?_gl=1*1l47swq*_ga*OUp3WnF6dklkRHNVaHBfaDJmUnFHSkR5VFBtMzV5enpSWk1XUENzWlNENGg2VmdQZHZoRVFfV3BmNXV2ZjREYQ
 $removeparam=_gl
@@ -1817,6 +1818,8 @@ $removeparam=tbas
 ! https://www.google.no/search?newwindow=1&source=univ&tbm=isch&q=fursuit&hl=no&fir=nwjEObe4q69GJM%2(…abridged by Dandelion…)3ezNNzM%252C_&usg=AI4_-kQL51ABubPt5Njl2wYsc9VKumls8Q&sa=X (23/01/2021)
 !+ NOT_OPTIMIZED
 $removeparam=fir
+||google.*/books$removeparam=source
+||google.*/flights$removeparam=source
 ||google.*/search$removeparam=source
 ! https://www.google.no/search?q=beetle&sa=X&hl=no&tbm=isch&ictx=1&fir=hA_sSJDgDUD05M%252Cra9C8zPHQZacDM%252C_%253BjHMPo_nzeT4CHM%252CJ-BwVgjGhTXbRM%252C_%253B8idWw3wKyv8TEM%252CEq9NAOyMjA8-LM%252C_%253BIr3d2npsvZA5mM%252Carwh6OytVDPyyM%252C_&vet=1&usg=AI4_-kQywyXRkRPeAWvGNhHd9wKvex-4AQ#imgrc=hA_sSJDgDUD05M (03/05/2021)
 @@||google.*&tbm=isch&*#imgrc=$removeparam=fir
