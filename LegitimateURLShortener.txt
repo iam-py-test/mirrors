@@ -1,5 +1,5 @@
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 27May2023v3
+! Version: 30May2023v2
 ! Expires: 1 day
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -2285,7 +2285,7 @@ $removeparam=/^pf_rd_/,domain=shopbop.com|amazon.*|imdb.com|zappos.com|audible.*
 $removeparam=Source,domain=facebook.com|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com|evga.com
 $removeparam=version,domain=mp.weixin.qq.com|us.norton.com
 $removeparam=p,domain=banggood.com|sogou.com
-$removeparam=linkId,domain=amazon.*|cbsnews.*|disneyplus.com
+$removeparam=linkId,domain=amazon.*|cbsnews.*|disneyplus.com|sporza.be
 $removeparam=trkid,domain=netflix.com|tokopedia.com
 ! (Exceptions: Discord's app download buttons)
 $removeparam=channel,domain=1sol.io|bybit.com|coinpanel.com|docs.google.com|docsend.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|privateinternetaccess.com|reddit.app.link|rei.com|runnode.com|squarespace.com|t.me|twitter.com|youtube.com
@@ -3949,7 +3949,7 @@ $removeparam=_1lr
 
 ! https://github.com/AdguardTeam/AdguardFilters/commit/57f39538070d7d5e6379da4e58bd02defffa7481
 $removeparam=ymid
-^z=*&var=$removeparam=var
+^z=*&var=$removeparam=var,document
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-5498306
 $removeparam=via,domain=sincode.ai
@@ -4005,6 +4005,9 @@ $removeparam=/^ref=troyhunt\.com/
 
 ! https://music.bugs.co.kr/?wl_ref=M_header_03_01
 ||bugs.co.kr^$removeparam=wl_ref
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6040753
+||bild.de^$document,removeparam=t_ref
 
 !#if !env_mobile
 ! ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ———
