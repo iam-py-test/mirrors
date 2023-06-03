@@ -1,5 +1,5 @@
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 02June2023v8
+! Version: 03June2023v6
 ! Expires: 1 day
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -1484,7 +1484,7 @@ $removeparam=/^ref=news.itsfoss.com$/
 ! ——— Specific remove rules ——— !
 !! ——— Can never be made generic ———
 ! (e.g. due to sparebank1.no, RARbg.to, Disney+ newsletter unsubscriptions)
-$removeparam=cid,domain=abcnews.go.com|adguard.com|adshares.net|ae.com|anntaylor.com|apple.com|bitdefender.*|blair.com|childrensplace.com|dcard.tw|elmundo.es|emirates.com|factoryoutletstore.com|flipkart.com|gamestop.com|giphy.com|glasses.com|haband.com|intuit.com|jared.com|jcpenney.com|kay.com|kohls.com|lenovo.com|loft.com|marca.com|microsoft.com|nbcnews.com|nike.com|nyandcompany.com|overstock.com|persol.com|proshop.*|radissonhotelsamericas.com|ray-ban.com|rei.com|rightmove.co.uk|samsung.com|stadium.*|staples.com|telenor.no|tokopedia.com|tommy.com|toms.com|tractorsupply.com|underarmour.com|vineyardvines.com|voxi.co.uk|wine.com|wsj.com|xg4ken.com|zales.com
+$removeparam=cid,domain=abcnews.go.com|adguard.com|adshares.net|ae.com|anntaylor.com|apple.com|bitdefender.*|blair.com|childrensplace.com|dcard.tw|elmundo.es|emirates.com|factoryoutletstore.com|flipkart.com|gamestop.com|giphy.com|glasses.com|haband.com|intuit.com|jared.com|jcpenney.com|kay.com|kohls.com|lenovo.com|loft.com|marca.com|microsoft.com|nbcnews.com|nike.com|nyandcompany.com|overstock.com|persol.com|proshop.*|radissonhotelsamericas.com|ray-ban.com|rei.com|rightmove.co.uk|samsung.com|stadium.*|staples.com|telenor.no|tokopedia.com|tommy.com|toms.com|totalbeauty.com|tractorsupply.com|underarmour.com|vineyardvines.com|voxi.co.uk|wine.com|wsj.com|xg4ken.com|zales.com
 ! https://deal.no/apple-thunderbolt-to-gigabit-ethernet/cat-p/c/p4935744&ref=prisjakt (15/11/2020)
 ! https://www.amazon.com/s?k=disney+fairies&ref=nb_sb_noss_2 (27/11/2020)
 ! (https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-488495)
@@ -2285,7 +2285,7 @@ $removeparam=/^pf_rd_/,domain=shopbop.com|amazon.*|imdb.com|zappos.com|audible.*
 $removeparam=Source,domain=facebook.com|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion|messenger.com|evga.com
 $removeparam=version,domain=mp.weixin.qq.com|us.norton.com
 $removeparam=p,domain=banggood.com|sogou.com
-$removeparam=linkId,domain=amazon.*|cbsnews.*|disneyplus.com|sporza.be
+$removeparam=linkId,domain=amazon.*|cbsnews.*|disneyplus.com|espn.*|sporza.be
 $removeparam=trkid,domain=netflix.com|tokopedia.com
 ! (Exceptions: Discord's app download buttons)
 $removeparam=channel,domain=1sol.io|bybit.com|coinpanel.com|docs.google.com|docsend.com|eventbrite.*|forms.gle|gleam.io|goodcrypto.app|instagram.com|kasta.io|privateinternetaccess.com|reddit.app.link|rei.com|runnode.com|squarespace.com|t.me|twitter.com|youtube.com
@@ -4037,6 +4037,18 @@ $document,removeparam=wp_source,domain=ac24.cz|ambcrypto.com|glispa.com|whitepag
 
 ! https://github.com/uBlockOrigin/uBlock-issues/discussions/2683
 ||sciencedirect.com/*?via%3D$removeparam=/^via%3D/,document
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6077018
+||espn.$document,removeparam=platform
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6077134
+||tsn.ca^$document,removeparam=tsn-amp
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6077146
+||iplt20.com^$document,removeparam=tagNames
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6071519
+||pnas.org^$document,removeparam=af
 
 !#if !env_mobile
 ! ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ———
