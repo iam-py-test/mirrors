@@ -1,5 +1,5 @@
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 11July2023v1
+! Version: 12July2023v2
 ! Expires: 1 day
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -1650,6 +1650,9 @@ $removeparam=returnFromLogin,domain=amazon.*
 ||amazon.$removeparam=T
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-5867802
 $removeparam=/^asc_/,doc,domain=amazon.*|aboutamazon.com|amzn.to
+! (from Firefox new tab ad) https://www.amazon.com/primeday/?tag=admarketus-20&ref=pd_sl_74dc22234008947b70137123d65e594c06220c7b2b8126f0c62e16c3&mfadid=adm
+||amazon.*/primeday/$removeparam=tag
+||amazon.*/primeday/$removeparam=mfadid
 
 !!! ——— Bing ———
 ! https://www.bing.com/search?q=hello&form=QBLH&sp=-1&pq=hello&sc=8-5&qs=n&sk=&cvid=49B83A335B1C4884B71B2FAD4A8027A9 (02/03/2021)
@@ -4124,7 +4127,10 @@ $removeparam=repost,domain=nbcnews.com|sacurrent.com
 ||skinnytaste.com^$removeparam=adt_ei
 
 ! https://www.pnas.org/doi/abs/10.1073/pnas.2024425118?af=R
-$document,removeparam=af,domain=pnas.org|science.org|scitation.org|wiley.com|worldscientific.com
+$doc,removeparam=af,domain=pnas.org|science.org|scitation.org|wiley.com|worldscientific.com
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6421911
+$removeparam=/^ref=workingsoftware\.dev$/,doc
 
 !#if !env_mobile
 ! ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ———
