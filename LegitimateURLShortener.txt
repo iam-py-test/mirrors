@@ -1,5 +1,5 @@
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 17July2023v2
+! Version: 19July2023v2
 ! Expires: 1 day
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -1626,8 +1626,9 @@ $removeparam=returnFromLogin,domain=amazon.*
 @@/b/ref=$removeparam=ie
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2751033
 ! https://github.com/AdguardTeam/AdguardFilters/issues/154323
-||amazon.*/dp/$removeparam=tag
-||amazon.*/stores/$removeparam=tag
+||amazon.*/dp/$removeparam=tag,doc
+||amazon.*/stores/$removeparam=tag,doc
+||amazon.*/product/$removeparam=tag,doc
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-3886967
 !!! ||amazon.$removeparam=psc - breaks size selection (https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-3932394)
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-3941487
@@ -1863,7 +1864,11 @@ $removeparam=ogbl
 ||google.*/search$removeparam=sqi
 ! https://www.google.com/search?gs_ssp=eJzj4tTP1TcwSssoSVZgNGB0YPASS0otKUktUkgqLc7MSy0uBjKKUhNLAeDcDI4&q=better+business+bureau&oq=better&sourceid=chrome&ie=UTF-8
 ||google.$removeparam=gs_ssp
-!!! ||www.google.*/search?$doc,removeparam=client - https://github.com/DandelionSprout/adfilt/issues/879
+!#if env_firefox
+! https://github.com/DandelionSprout/adfilt/issues/879
+! https://github.com/DandelionSprout/adfilt/issues/893
+||www.google.*/search?$doc,removeparam=client
+!#endif
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1412160
 ||google.$removeparam=prds
 ! https://github.com/DandelionSprout/adfilt/issues/618
@@ -4131,6 +4136,9 @@ $doc,removeparam=af,domain=pnas.org|science.org|scitation.org|wiley.com|worldsci
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6421911
 ^ref=workingsoftware.dev^$doc,removeparam=ref
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-6412906
+||reddit.com^$removeparam=rdt,doc
 
 !#if !env_mobile
 ! ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ———
