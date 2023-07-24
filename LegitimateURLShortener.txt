@@ -1,5 +1,5 @@
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 23July2023v1
+! Version: 24July2023v1
 ! Expires: 1 day
 ! Description: In a world dominated by bit.ly, adf.ly, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -138,7 +138,7 @@ $removeparam=dartycid
 $removeparam=bbaid
 
 ! https://www.paypal.com/myaccount/transaction/details/7CY16898V3123435J?v=1&utm_unptid=&ppid=RT000016&cnac=NO&rsta=no_NO(nb-NO)&cust=&unptid=&calc=24c08e54728d&unp_tpcid=null&page=main%3Aemail%3ART000016&pgrp=main%3Aemail&e=cl&mchn=em&s=ci&mail=sys&appVersion=1.26.0&xt=
-$removeparam=ppid
+||paypal.$removeparam=ppid
 $removeparam=unptid
 $removeparam=unp_tpcid
 $removeparam=pgrp
@@ -1524,7 +1524,12 @@ $removeparam=adid,domain=nikkei.co.jp
 
 !! ——— Rules for heavily covered sites ———
 !!! ——— Amazon ———
+! filters known to be problematic
 !!! (Bad ideas to remove: rh {https://github.com/DandelionSprout/adfilt/issues/767#issuecomment-1416171034})
+!!! ||amazon.$removeparam=ie - https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2611566
+!!! ||amazon.$removeparam=rnid - https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-4123725
+!!! ||amazon.$removeparam=s - Breaks sorting in some places, can only be removed from specific paths
+!!! ||amazon.$removeparam=psc - breaks size selection (https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-3932394, added in https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-3886967)
 ! https://www.amazon.com/Razer-Core-Thunderbolt-External-Enclosure/dp/B07CQG2K5K/?tag=makeusw-20&linkCode=ogi&th=1&psc=1 (15/11/2020)
 ||amazon.$removeparam=th
 ||amazon.$removeparam=linkCode
@@ -1548,9 +1553,6 @@ $removeparam=trk,domain=splashthat.com|aws.amazon.com|aws|xkcd.com
 ||amazon.$removeparam=ascsubtag
 ||amazon.$removeparam=crid
 ||amazon.$removeparam=/^cv_ct_/
-!!! ||amazon.$removeparam=ie - https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2611566
-!!! ||amazon.$removeparam=rnid - https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-4123725
-!!! ||amazon.$removeparam=s - Breaks sorting in some places, can only be removed from specific paths
 ||amazon.$removeparam=sprefix
 ||amazon.$removeparam=ac_md
 ! https://www.amazon.com/dp/B08NPNYMW4/?coliid=I15X2UZZA97XNK
@@ -1629,8 +1631,6 @@ $removeparam=returnFromLogin,domain=amazon.*
 ||amazon.*/dp/$removeparam=tag,doc
 ||amazon.*/stores/$removeparam=tag,doc
 ||amazon.*/product/$removeparam=tag,doc
-! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-3886967
-!!! ||amazon.$removeparam=psc - breaks size selection (https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-3932394)
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-3941487
 ||amazon.$removeparam=qu
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-4239354
