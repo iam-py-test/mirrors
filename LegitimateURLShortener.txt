@@ -1,5 +1,5 @@
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 21November2023v1
+! Version: 24November2023v3
 ! Expires: 1 day
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -1475,6 +1475,9 @@ $removeparam=/^ref=news.itsfoss.com$/
 $removeparam=b_source
 $removeparam=b_medium
 $removeparam=b_campaign
+
+! https://www.elkjop.no/product/hvitevarer/vask-og-tork/torketrommel-og-torkeskap/torketrommel/gram-torketrommel-de5731050/DE5731050?gad_source=1 (23/11/2023)
+$removeparam=gad_source
 
 ! https://github.com/purl-sanitizer/purl/blob/main/data/tracking_link_decorations.txt (Parameters that were present in at least 10 rows there as of 7th of October 2023, and which didn't look overly broad)
 $removeparam=_gid
@@ -4439,6 +4442,9 @@ $doc,removeparam=st,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyi
 ||cimri.com^$doc,removeparam=offerFiltered
 ||cimri.com^$doc,removeparam=hasFavorite
 
+! https://github.com/AsuharietYgvar/AppleNeuralHash2ONNX/issues/1?ref=blog.roboflow.com
+*ref=blog.roboflow.com*$doc,removeparam=/^ref=blog.roboflow.com$/
+
 !#if !env_mobile
 ! ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ———
 ! https://sproutsluckycorner.files.wordpress.com/2019/12/ring-fit-adventure-smoothies-1.png?w=600 (Shows the actual raw image instead of a promotion page; 25/11/2020)
@@ -4509,6 +4515,9 @@ buffalonews.com##+js(set, lee_trkLinkSrc, noopFunc)
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-5475592
 @@||startpage.com/sp/qi$removeparam=sc
+
+! Strangely prevents placeholders on flagpedia.net/index (24/11/2023)
+@@||flagpedia.net^$ping,xhr,removeparam=gtm
 
 !#if adguard
 !#if adguard_ext_firefox
