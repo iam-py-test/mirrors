@@ -1,5 +1,5 @@
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 03April2024v1
+! Version: 05April2024v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -339,7 +339,6 @@ $removeparam=litb_from
 $doc,removeparam=/^adword_/,domain=~justdial.com
 $removeparam=adw_src_id
 
-! https://www.ericgown.no/A-Formet-Prinsesse-V-Hals-Gulvlengde-Chiffong-Selskapskjoler-Med-Frynse-Splittet-Front-017216976-g216976/?ggsub=pl&ggntk=g&ggcid=426150376762&ggkey&ggpos&ggdev=m&ggdevm&ggplm&ggtgt&currency=EUR (22/05/2021)
 $removeparam=ggsub
 $removeparam=ggntk
 $removeparam=ggcid
@@ -2725,8 +2724,6 @@ $removeparam=medium,domain=1sol.io|bybit.com|coinpanel.com|deepdiscount.com|disc
 $removeparam=rid,domain=giphy.com
 ||rightmove.co.uk^$removeparam=csg
 
-! https://www.ericgown.no/A-Formet-Prinsesse-V-Hals-Gulvlengde-Chiffong-Selskapskjoler-Med-Frynse-Splittet-Front-017216976-g216976/?ggsub=pl&ggntk=g&ggcid=426150376762&ggkey&ggpos&ggdev=m&ggdevm&ggplm&ggtgt&currency=EUR (22/05/2021)
-||ericgown.no^$removeparam=ggkey
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-770867
 $removeparam=ServiceType,domain=cnet.*|gamespot.com
@@ -4685,6 +4682,9 @@ $doc,removeparam=jmtyClId
 
 ! https://bybaobab•gumroad•com/l/sTjIA?recommended_by=discover
 ||gumroad.com^$removeparam=recommended_by
+
+! https://www.lakera.ai/blog/guide-to-prompt-injection?ref=gandalf
+ref=gandalf$doc,removeparam=/^ref=gandalf$/
 
 !#if !env_mobile
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
