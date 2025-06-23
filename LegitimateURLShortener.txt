@@ -1,7 +1,7 @@
 ! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 22June2025v2
+! Version: 23June2025v2
 ! Expires: 12 hours
-! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary $/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
+! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
 ! Homepage for the repository: https://github.com/DandelionSprout/adfilt/blob/master/Wiki/General-info.md#-english
 ! Opt-in allowlist for affiliate support tags: https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener-AffiliateTagAllowlist.txt
@@ -668,7 +668,7 @@ $removeparam=strackid
 ! https://www•movavi•com/?afsrc=cj&usource=cj
 $removeparam=afsrc
 $removeparam=lctid
-$~ping,removeparam=lcid,domain=~rekono.si
+$doc,removeparam=lcid,domain=~rekono.si
 $removeparam=usource
 
 ! http://www•bitdefender•com/?MPid=75107
@@ -5052,7 +5052,7 @@ ref=dtf.ru$doc,removeparam=ref
 ||vitusapotek.no^$removeparam=device
 
 ! https://deac-riga•dl•sourceforge•net/project/zint/zint/2.15.0/zint-2.15.0-win32.zip?viasf=1 (21/06/2025)
-||dl.sourceforge.net^$doc,removeparam=viasf
+!!! ||dl.sourceforge.net^$doc,removeparam=viasf (Breaks downloads that haven't yet started)
 
 !#if !env_mobile
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
