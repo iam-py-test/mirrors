@@ -1,5 +1,5 @@
 ﻿! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 02February2026v1
+! Version: 04February2026v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -1860,7 +1860,7 @@ $removeparam=mod,domain=barrons.com|dowjones.com|fnlondon.com|mansionglobal.com|
 ! (Exceptions: mail•qq•com, highFI, phpBB forums, flipkartCOM, various other sites)
 $removeparam=sid,domain=anrdoezrs.net|dpbolvw.net|gopjn.com|jdoqocy.com|kqzyfj.com|pepperjamnetwork.com|tkqlhce.com|gamereactor.*
 ! No particular example (Neither Zoom or NextDNS can be added; see https://github.com/DandelionSprout/adfilt/issues/665)
-$removeparam=from,doc,domain=apkpure.com|bandcamp.com|browserling.com|cancam.jp|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion|ettoday.net|landevei.no|luisaviaroma.com|sogou.com|store.hbr.org|app.snyk.io|onlinepngtools.com|indiatimes.com|jetbrains.com|tvtropes.org|yandex.com
+$removeparam=from,doc,domain=apkpure.com|bandcamp.com|browserling.com|cancam.jp|duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion|feeder.co|ettoday.net|landevei.no|luisaviaroma.com|sogou.com|store.hbr.org|app.snyk.io|onlinepngtools.com|indiatimes.com|jetbrains.com|tvtropes.org|yandex.com
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1559915 and https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1559864 (eBay can't be added; see https://github.com/DandelionSprout/adfilt/pull/514)
 $removeparam=keyword,domain=bindright.com|lendgo.com|reddit.app.link
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1707764
@@ -3473,7 +3473,7 @@ $removeparam=marketing_id
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1666311
 ! https://github.com/DandelionSprout/adfilt/pull/390
 ! https://v•youku•com/v_show/id_XNTE5MDA0MzA2NA==.html?s=decc0e2f935f461f84b1 (30/11/2021)
-$removeparam=s,domain=greenhouse.io|mothership.sg|spreadprivacy.com|youku.com|nextdoor.com|qwant.com
+$removeparam=s,domain=greenhouse.io|mothership.sg|spreadprivacy.com|nextdoor.com|qwant.com
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2580104
 ! Breaks some websites, ie twitter redirect links: https://gitlab.com/ClearURLs/rules/-/merge_requests/21, https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-9599956
@@ -5274,6 +5274,9 @@ ref=the-browser$doc,removeparam=ref
 ! https://mydefender•microsoft•com/?refSource=office•com&refPage=apps (30/01/2026)
 ||microsoft.com^$removeparam=refSource
 ||microsoft.com^$removeparam=refPage
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-15686111
+ref=shadcn.com$doc,removeparam=ref
 
 !#if !env_mobile
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
