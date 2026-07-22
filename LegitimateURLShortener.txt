@@ -1,5 +1,5 @@
 ﻿! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 20July2026v2
+! Version: 22July2026v4
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -2990,7 +2990,7 @@ $removeparam=onebrand_source
 $removeparam=ved,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1018655
-$removeparam=v,hinta.fi|carrefoursa.com
+$removeparam=v,domain=hinta.fi|carrefoursa.com
 @@||hinta.fi/lib/$removeparam=v
 ! https://www•bbc•co•uk/news/uk-57892934?at_medium=custom7&at_custom4=2CB46890-EAAD-11EB-AC49-99003A982C1E&at_custom3=BBC+News&at_custom1=%5Bpost+type%5D&at_campaign=64&at_custom2=facebook_page&fbclid=(...)
 $removeparam=at_medium,domain=bbc.*|cardif.fr
@@ -3035,7 +3035,7 @@ $removeparam=rank,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64ytbb2dj3x
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1151326
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-831247
 ||malwarebytes.com^$removeparam=guard
-$removeparam=x-source,malwarebytes.com|parallels.com
+$removeparam=x-source,domain=malwarebytes.com|parallels.com
 ||malwarebytes.com^$removeparam=ADDITIONAL_x-source
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-1159362
@@ -3795,7 +3795,7 @@ $removeparam=prisjakt,domain=davids.se|larsbengtsson.se|poradio.se|teleradio.nu
 $doc,removeparam=refresh,domain=cnn.com|startribune.com
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-2052109
-$removeparam=feature,tradingview.com|musescore.com
+$removeparam=feature,domain=tradingview.com|musescore.com
 
 ! https://github.com/DandelionSprout/adfilt/issues/63#issuecomment-1026964901
 ||emag.ro^$removeparam=recid
@@ -4033,7 +4033,7 @@ $removeparam=user_id,doc,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64yt
 $removeparam=x50878
 
 ! https://github.com/uBlockOrigin/uAssets/issues/13958#issuecomment-1178776992
-$removeparam=c,redirect.appmetrica.yandex.com|blu-ray.com
+$removeparam=c,domain=redirect.appmetrica.yandex.com|blu-ray.com
 
 ! https://www•bloomberg•com/news/articles/2022-07-07/stocks-set-to-rise-as-recession-obsession-cools-markets-wrap?fromMostRead=true
 $removeparam=fromMostRead,domain=bloomberg.com
@@ -4938,7 +4938,7 @@ $doc,removeparam=esrc,domain=arstechnica.com|newyorker.com|wired.com
 ||sky.it^$doc,removeparam=social
 
 ! https://www•landevei•no/proffsykling/team-coop/hjem-uten-nm-suksess-men-proffkontrakten-er-allerede-i-boks-for-andre-drege?email=(…) (06/07/2024)
-$removeparam=email,landevei.no|thehill.com
+$removeparam=email,domain=landevei.no|thehill.com
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-10238857
 ! https://www•adobe•com/xd?sdid=19SCDQBW&mv=social&ref=producthunt
@@ -5417,6 +5417,10 @@ ref=sqliteviewer.app$doc,removeparam=ref
 
 ! https://learn•microsoft•com/en-us/security-updates/SecurityBulletins/2013/ms13-002?redirectedfrom=MSDN
 ||learn.microsoft.com^$removeparam=redirectedfrom
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-17733299
+||fairstone.ca^$doc,removeparam=adplacementid
+||loan.fairstone.ca^$doc,removeparam=jumpsource
 
 !#if !env_mobile
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
