@@ -1,5 +1,5 @@
 ﻿! Title: ➗ Actually Legitimate URL Shortener Tool
-! Version: 04November2026v1
+! Version: 07November2026v1
 ! Expires: 12 hours
 ! Description: In a world dominated by bitLy, adfLy, and several thousand other malware cover-up tools, this list reduces the length of URLs in a much more legitimate and transparent manner. Essentially, it automatically removes unnecessary ?/& values from the URLs, making them easier to copy from the URL bar and pasting elsewhere as links. Enjoy.
 ! Homepage: https://github.com/DandelionSprout/adfilt/discussions/163
@@ -4080,7 +4080,7 @@ $removeparam=user_id,doc,domain=nytimes.com|nytimesn7cgmftshazwhfgzm37qxb44r64yt
 $removeparam=x50878
 
 ! https://github.com/uBlockOrigin/uAssets/issues/13958#issuecomment-1178776992
-$removeparam=c,domain=redirect.appmetrica.yandex.com|blu-ray.com
+$doc,removeparam=c,domain=redirect.appmetrica.yandex.com|blu-ray.com
 
 ! https://www•bloomberg•com/news/articles/2022-07-07/stocks-set-to-rise-as-recession-obsession-cools-markets-wrap?fromMostRead=true
 $removeparam=fromMostRead,domain=bloomberg.com
@@ -5693,7 +5693,11 @@ $doc,removeparam=lr_input,domain=investopedia.com|people.inc
 ||investopedia.com^$doc,removeparam=inv_to_sim
 
 ! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-19302144
-||entire.com^$removeparam=redirected_from
+||entire.com^$doc,removeparam=redirected_from
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-19429873
+||oldphoneworks.com^$doc,removeparam=_su_rec
+||oldphoneworks.com^$doc,removeparam=_su_rec_id
 
 !#if !env_mobile
 ! 🖥️ ——— Entries mostly dedicated to maximising image sizes (thus poorly suited for phones) ——— 🖥️ !
@@ -5811,6 +5815,9 @@ buffalonews.com##+js(set, lee_trkLinkSrc, noopFunc)
 
 ! breaks unsubscribe links
 @@||newsletter.smartbrief.com/UnSubscribe.jsp$removeparam
+
+! https://github.com/DandelionSprout/adfilt/discussions/163#discussioncomment-19453388
+@@||investopedia.com/newsletters/preferences/unsubscribe^$doc,removeparam=hid
 
 !#if !ext_ublock
 !#include uBO%20list%20extensions/LegitimateURLShortener%20—%20AdGuardOnlyEntries.txt
